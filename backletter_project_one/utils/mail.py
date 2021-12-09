@@ -40,14 +40,14 @@ class SendMail:
             msg.attach(att)
             body = MIMEText(mail_boday, _subtype="html", _charset='utf-8')
 
-        msg.attach(body)
-        smtp = smtplib.SMTP()
-        smtp.set_debuglevel(1)
-        smtp.connect(self.smtpserver, self.port)
-        # smtp.starttls()
-        #用户登录并发送邮件
-        smtp.login(self.sender, self.psw)
-        smtp.sendmail(self.sender, self.receiver, msg.as_string())
-        smtp.quit()
+            msg.attach(body)
+            smtp = smtplib.SMTP()
+            smtp.set_debuglevel(1)
+            smtp.connect(self.smtpserver, self.port)
+            # smtp.starttls()
+            #用户登录并发送邮件
+            smtp.login(self.sender, self.psw)
+            smtp.sendmail(self.sender, self.receiver, msg.as_string())
+            smtp.quit()
 
 
